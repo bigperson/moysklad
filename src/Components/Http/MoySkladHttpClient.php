@@ -20,7 +20,8 @@ class MoySkladHttpClient{
     private $preRequestSleepTime = 200;
 
     private
-        $posEndpoint = "https://online.moysklad.ru/api/posap/1.0/",
+        $endpoint = "https://api.moysklad.ru/api/remap/1.2/",
+        $posEndpoint = "https://api.moysklad.ru/api/posap/1.0/",
         $login,
         $password,
         $posToken;
@@ -157,6 +158,7 @@ class MoySkladHttpClient{
         }
 
         $headers = [
+            'Accept-Encoding' => 'gzip',
             "Authorization" => "Basic " . base64_encode($this->login . ':' . $password)
         ];
         $config = [

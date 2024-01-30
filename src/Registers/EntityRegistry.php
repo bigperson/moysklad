@@ -41,11 +41,13 @@ use MoySklad\Entities\Documents\Positions\CustomerOrderPosition;
 use MoySklad\Entities\Documents\Positions\InventoryPosition;
 use MoySklad\Entities\Documents\Positions\DemandPosition;
 use MoySklad\Entities\Documents\Positions\EnterPosition;
+use MoySklad\Entities\Documents\Positions\InvoicePosition;
 use MoySklad\Entities\Documents\Positions\LossPosition;
 use MoySklad\Entities\Documents\Positions\MovePosition;
 use MoySklad\Entities\Documents\Positions\SalesReturnPosition;
 use MoySklad\Entities\Documents\Positions\PurchaseReturnPosition;
 use MoySklad\Entities\Documents\Positions\SupplyPosition;
+use MoySklad\Entities\Documents\Positions\PurchaseOrderPosition;
 use MoySklad\Entities\Documents\PriceLists\PriceList;
 use MoySklad\Entities\Documents\PriceLists\PriceListRow;
 use MoySklad\Entities\Documents\Processings\ProcessingMaterial;
@@ -80,7 +82,9 @@ use MoySklad\Entities\Misc\CompanySettings;
 use MoySklad\Entities\Misc\CustomEntity;
 use MoySklad\Entities\Misc\Publication;
 use MoySklad\Entities\Misc\State;
+use MoySklad\Entities\Misc\PriceType;
 use MoySklad\Entities\Misc\Webhook;
+use MoySklad\Entities\Misc\SalesChannel;
 use MoySklad\Entities\Organization;
 use MoySklad\Entities\Products\AbstractProduct;
 use MoySklad\Entities\Products\Bundle;
@@ -124,6 +128,7 @@ class EntityRegistry extends AbstractSingleton{
         Account::class,
         ContactPerson::class,
         State::class,
+        PriceType::class,
         AbstractPosition::class,
         LossPosition::class,
         EnterPosition::class,
@@ -131,9 +136,10 @@ class EntityRegistry extends AbstractSingleton{
         CustomerOrderPosition::class,
         InventoryPosition::class,
         DemandPosition::class,
+        InvoicePosition::class,
         SupplyPosition::class,
         SalesReturnPosition::class,
-        PurchaseReturnPosition::class,
+        PurchaseOrderPosition::class,
         AbstractComponent::class,
         BundleComponent::class,
         Country::class,
@@ -190,6 +196,7 @@ class EntityRegistry extends AbstractSingleton{
         PriceListRow::class,
         Audit::class,
         AuditEvent::class,
+        SalesChannel::class,
         ProcessingPlanMaterial::class,
         ProcessingPlanProduct::class,
         ProcessingProduct::class,

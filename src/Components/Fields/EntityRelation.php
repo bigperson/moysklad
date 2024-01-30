@@ -34,8 +34,11 @@ class EntityRelation extends AbstractFieldAccessor {
                     if ( $i === 'meta' ){
                         $mf = new MetaField($e);
                         if ( isset($mf->size) ){
-                            $rows = !empty($ar['rows']) ? $ar['rows'] : [];
-                            $foundRelations[$k] = new RelationEntityList($sklad, $rows, $mf);
+                            if ($k === 'images' && isset($ar['rows'])) {
+                                $foundRelations[$k] = new RelationEntityList($sklad, $ar['rows'], $mf);
+                            } else {
+                                $foundRelations[$k] = new RelationEntityList($sklad, [], $mf);
+                            }
                         } else {
                             $class = $mf->getClass();
                             if ( $class ){

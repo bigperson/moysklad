@@ -12,8 +12,9 @@ class ProfitReport extends AbstractReport  {
     public static function byProduct(MoySklad $sklad, ProfitReportQuerySpecs $specs = null){
         return static::queryWithParam($sklad, 'byproduct', $specs);
     }
-    public static function byEmployee(MoySklad $sklad, ProfitReportQuerySpecs $specs = null){
-        return static::queryWithParam($sklad, 'byemployee', $specs);
-    }
 
+    public static function byVariant(MoySklad $sklad, ProfitReportQuerySpecs $specs = null){
+        return static::queryWithParam($sklad, 'byvariant', $specs);
+    }
 }
+
